@@ -7,7 +7,6 @@ from app.models import User
 from werkzeug.urls import url_parse
 
 
-
 @app.route("/styles/<path:path>")
 def send_styles(path):
     return send_from_directory("styles", path)
