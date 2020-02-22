@@ -2,3 +2,5 @@ pip install flask-sqlalchemy
 pip install flask-migrate
 pip install python-dotenv
 pip install flask-login
+pip install flask-mail
+pip install pyjwt
