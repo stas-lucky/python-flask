@@ -9,6 +9,16 @@ pip install flask-bootstrap
 pip install flask-moment
 pip install flask-babel
 
+pip install guess_language-spirit
+
+
+# database updates
+# create migration
+flask db migrate -m "add language to posts"
+
+# migrate
+flask db upgrade
+
 
 # translation editor
 https://snapcraft.io/poedit

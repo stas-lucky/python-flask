@@ -16,5 +16,7 @@ class Config(object):
     ADMINS = ['studio-test@simplifai.ai']
 
     POSTS_PER_PAGE = 5
-    LANGUAGES = ['en', 'es']
+    LANGUAGES = ['en', 'uk']
+
+    MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')
 

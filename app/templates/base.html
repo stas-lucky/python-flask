@@ -4,6 +4,21 @@
     {{ super() }}
     {{ moment.include_moment() }}
     {{ moment.lang(g.locale) }}
+
+    <script>
+        function translate(sourceElm, destElm, sourceLang, destLang){
+            $(destElm).html('<img src="{{ url_for('static', filename='loading.gif') }}">')
+            $.post("/translate", {
+                text: $(sourceElm).text(),
+                source_language: sourceLang,
+                dest_language: destLang
+            }).done(function (response) {
+                $(destElm).text(response["text"])
+            }).fail(function () {
+                $(destElm).text("{{ _('Error: Could not contact server.') }}")
+            })
+        }
+    </script>
 {% endblock %}
 
 {% block title %}
