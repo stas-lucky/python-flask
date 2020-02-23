@@ -4,3 +4,27 @@ pip install python-dotenv
 pip install flask-login
 pip install flask-mail
 pip install pyjwt
+pip install flask-bootstrap
+
+pip install flask-moment
+pip install flask-babel
+
+
+# translation editor
+https://snapcraft.io/poedit
+
+# gettext
+http://www.gnu.org/software/gettext/
+
+
+# babel extract all messages _() and _l() to temporary .pot fiel
+pybabel extract -F babel.cfg -k _l -o messages.pot .
+
+# init new language, creates .po file
+pybabel init -i messages.pot -d app/translations -l uk
+
+# compile langauge to final *.mo format
+
+# to update existing langs
+pybabel extract -F babel.cfg -k _l -o messages.pot .
+pybabel update -i messages.pot -d app/translations
