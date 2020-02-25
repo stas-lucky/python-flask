@@ -38,3 +38,15 @@ pybabel init -i messages.pot -d app/translations -l uk
 # to update existing langs
 pybabel extract -F babel.cfg -k _l -o messages.pot .
 pybabel update -i messages.pot -d app/translations
+
+
+# elastic search
+
+sudo /bin/systemctl daemon-reload
+sudo /bin/systemctl enable elasticsearch.service
+sudo systemctl start elasticsearch.service
+sudo systemctl stop elasticsearch.service
+
+sudo journalctl -f
+sudo journalctl --unit elasticsearch
+sudo journalctl --unit elasticsearch --since  "2016-10-30 18:17:16"
