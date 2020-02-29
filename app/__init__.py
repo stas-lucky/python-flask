@@ -17,8 +17,6 @@ from flask import request
 from elasticsearch import Elasticsearch
 
 
-
-
 db = SQLAlchemy()
 migrate = Migrate()
 login = LoginManager()
